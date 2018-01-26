@@ -1,0 +1,30 @@
+	<div class="panel panel-primary" ng-init="getBooks()">
+	  <div class="panel-heading">
+	    <h3 class="panel-title">Latest Books</h3>
+	  </div>
+	  <div class="panel-body">
+	    <div class="row">
+	    	<div ng-repeat="book in books">
+	    		<form ng-submit="removeBook()">
+		    		<div class="col-md-6">
+		    			<div class="col-md-6">
+
+		    				<h4>{{book.title}}</h4>
+			    			<p>{{book.description}}</p>
+			    			<div class="col-md-6">
+			    				<a class="btn btn-primary" href="#!/books/details/{{book._id}}">View Details</a>
+			    			</div>
+			    			<input type="text" class="form-control" ng-model="book._id" placeholder="id">
+			    			<div class="col-md-6">
+			    				<button type="submit" class="btn btn-primary">Remove</button>
+			    			</div>
+		    			</div>
+		    			<div class="col-md-6">
+		    				<img class="thumbnail" ng-src="{{book.image_url}}">
+		    			</div>
+		    		</div>
+		    	</form>
+	    	</div>
+		</div>
+	  </div>
+	</div>
